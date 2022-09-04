@@ -7,36 +7,22 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
-    <link rel="stylesheet" href="../public/css/styles.css" />
+    <link rel="stylesheet" href="./public/css/styles.css" type="text/css" />
   </head>
   <body>
     <aside class="menu">
       <ul class="menu-list">
-        <li>
-          <img class="icon" src="../public/media/casa.png" alt="inicio" /><a
-            >Inicio</a
-          >
-        </li>
-        <li>
-          <img class="icon" src="../public/media/lista.png" alt="proyectos" /><a
-            >Proyectos</a
-          >
-        </li>
-        <li>
-          <img
-            class="icon"
-            src="../public/media/pendiente.png"
-            alt="tareas"
-          /><a>Mis Tareas</a>
-        </li>
-        <li>
-          <img
-            class="icon"
-            src="../public/media/agregar.png"
-            alt="crear proyecto"
-          /><a>Crear Proyecto</a>
-        </li>
-        <li class="cerrarSesion">Cerrar Sesion</li>
+        <div class="columns">
+          <div class="column">
+            <div class="row"><img class="icon" src="./public/media/casa.png" alt="inicio" /><a>Inicio</a></div>
+            <div class="row"><img class="icon" src="./public/media/lista.png" alt="proyectos" /><a>Proyectos</a></div>
+            <div class="row"><img class="icon" src="./public/media/agregar.png" alt="crear proyecto"/><a>Mis Tareas</a></div>
+            <div class="row"><img class="icon" src="./public/media/pendiente.png" alt="tareas"/><a>Crear Proyecto</a></div>
+            <li class="cerrarSesion">Cerrar Sesion</li>
+          </div>
+
+        </div>
+        <!-- <li class="cerrarSesion">Cerrar Sesion</li> -->
       </ul>
     </aside>
   </body>
