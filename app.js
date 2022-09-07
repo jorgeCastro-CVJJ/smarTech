@@ -1,3 +1,4 @@
+// librerias base
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
@@ -7,14 +8,17 @@ const csrf = require("csurf");
 
 const app = express();
 
+// uso de librerias
 app.set("view engine", "ejs");
 app.set("views", "views");
 
+// estatico, de eso no se mueve
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+// cookies
 app.use(
   session({
     secret: "jdfefwedewdwefsdsfsfsefewwfcvbjkygfvjm",
@@ -23,6 +27,7 @@ app.use(
   })
 );
 
+// evitar mal uso de ruteo
 const csrfProtection = csrf();
 app.use(csrfProtection);
 
@@ -37,4 +42,4 @@ app.use((request, response, next) => {
   response.send("Error 404: El recurso solicitado no existe"); //Manda la respuesta
 });
 
-app.listen(3000);
+app.listen(5000);
