@@ -6,9 +6,12 @@ const session = require("express-session");
 const cookieParser = require("cookie-parser");
 const csrf = require("csurf");
 
-const app = express();
+// rutas a utilizar
+const menuColaborador = require("./routes/colaborador.routes");
 
 // uso de librerias
+const app = express();
+const PORT = 5000;
 app.set("view engine", "ejs");
 app.set("views", "views");
 
@@ -36,6 +39,9 @@ app.use((request, response, next) => {
   next();
 });
 
+// ruta raiz
+app.use("/", menuColaborador);
+
 // ERROR 404
 app.use((request, response, next) => {
   response.status(404);
@@ -43,3 +49,4 @@ app.use((request, response, next) => {
 });
 
 app.listen(5000);
+console.log(`Servidor levantado en el puerto ${PORT}`);
